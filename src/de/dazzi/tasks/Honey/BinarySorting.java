@@ -47,9 +47,12 @@ public class BinarySorting {
         });
 
         return result
-                .stream().
-                        distinct().
-                        collect(Collectors.toList()).stream().mapToInt(i->i).toArray();
+                .stream()
+                    .distinct()
+                    .collect(Collectors.toList())
+                    .stream()
+                        .mapToInt(i->i)
+                        .toArray();
     }
 
 }
