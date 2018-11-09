@@ -31,4 +31,12 @@ class BinarySortingTest {
                 Arrays.toString( BinarySorting.getAscBinSorting(new int[]{1,1}) )
         );
     }
+
+    @Test
+    void TestCase4() {
+        assertEquals(
+                Arrays.toString( new int[]{8,5,6,7} ),
+                Arrays.toString( BinarySorting.getAscBinSorting(new int[]{7,8,6,5}) )
+        );
+    }
 }

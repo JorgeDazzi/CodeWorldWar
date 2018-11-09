@@ -50,9 +50,9 @@ public class BinarySorting {
                 .stream()
                     .distinct()
                     .collect(Collectors.toList())
-                    .stream()
-                        .mapToInt(i->i)
-                        .toArray();
+                .stream()
+                    .mapToInt(i -> i)
+                    .toArray();
     }
 
 }
