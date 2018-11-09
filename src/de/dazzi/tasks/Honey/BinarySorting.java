@@ -23,27 +23,24 @@ public class BinarySorting {
     public static int[] getAscBinSorting(int[] seq){
 
         HashMap<String, List<Integer> > db = new HashMap<>();
-        List<Integer> dbTemp;
-        String strTemp;
-        int nTemp;
-
+        String nTemp;
 
         for(int n : seq){
-            strTemp = Integer.toBinaryString(n);
-            nTemp = countOnes(strTemp);
 
-             if( db.containsKey(nTemp + "") )
-                 db.get(nTemp + "").add(n);
+            nTemp = countOnes( Integer.toBinaryString(n) ) + "";
+
+             if( db.containsKey(nTemp) )
+                 db.get(nTemp).add(n);
 
              else{
-                 dbTemp = new ArrayList<>();
-                 dbTemp.add(n);
-                 db.put(nTemp + "", dbTemp);
+                 db.put(nTemp, new ArrayList<>());
+                 db.get(nTemp).add(n);
              }
 
         }
 
         List<Integer> result = new ArrayList<>();
+
         db.forEach( (key, arr) -> {
             Collections.sort(arr);
             result.addAll(arr);
